@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+
+/* ---------------- SCOPED GLOBAL RESET ---------------- */
+.login-page * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-page {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ddd;
+  font-size: 50px;
+}
+
+/* ---------------- LOGO ---------------- */
+.login-page .logo-icon img {
+  width: 300px;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -50px;
+}
+
+/* ---------------- CONTAINER ---------------- */
+.login-page .login-container {
+  background-color: #fff;
+  width: 760px;
+  max-width: 100vw;
+  height: 480px;
+  position: relative;
+  overflow-x: hidden;
+  border-radius: 36px;
+}
+
+/* ---------------- FORMS ---------------- */
+.login-page .login-container .forms-container {
+  position: relative;
+  width: 50%;
+  text-align: center;
+}
+
+.login-page .login-container .forms-container .form-control {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 480px;
+  transition: all 0.75s ease-in-out;
+}
+
+.login-page .login-container .forms-container .form-control h2 {
+  font-size: 2rem;
+}
+
+.login-page .login-container .forms-container .form-control form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+}
+
+.login-page .login-container .forms-container .form-control form input {
+  margin: 10px 0;
+  border: none;
+  padding: 15px;
+  background-color: #efefef;
+  border-radius: 36px;
+}
+
+.login-page .login-container .forms-container .form-control form button {
+  border: none;
+  padding: 20px;
+  margin-top: 5px;
+  background-color: #3c91e6;
+  border-radius: 36px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-page .login-container .forms-container .form-control form button:focus {
+  outline: none;
+}
+
+/* ---------------- SOCIAL ICONS ---------------- */
+.login-page .login-container .forms-container .form-control .socials i {
+  margin: 0 5px;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.login-page .login-container .forms-container .form-control .socials .fa-facebook-f {
+  padding: 5px 8px;
+  background-color: #3b5998;
+}
+
+.login-page .login-container .forms-container .form-control .socials .fa-google-plus-g {
+  padding: 5px 4px;
+  background-color: #db4a39;
+}
+
+.login-page .login-container .forms-container .form-control .socials .fa-linkedin-in {
+  padding: 5px 6px;
+  background-color: #0e76a8;
+}
+
+/* ---------------- SIGNUP / SIGNIN FORMS ---------------- */
+.login-page .login-container .forms-container .form-control.signup-form {
+  opacity: 0;
+  z-index: 1;
+  left: 200%;
+}
+
+.login-page .login-container .forms-container .form-control.signin-form {
+  opacity: 1;
+  z-index: 2;
+  left: 0%;
+}
+
+/* ---------------- INTRO SECTIONS ---------------- */
+.login-page .login-container .intros-container {
+  position: relative;
+  left: 50%;
+  width: 50%;
+  text-align: center;
+}
+
+.login-page .login-container .intros-container .intro-control {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 480px;
+  color: #fff;
+  background: linear-gradient(170deg, #3c91e6, #2584e3);
+  transition: all 0.75s ease-in-out;
+  border-radius: 36px;
+}
+
+.login-page .login-container .intros-container .intro-control .intro-control__inner {
+  margin: 0 30px;
+}
+
+.login-page .login-container .intros-container .intro-control button {
+  border: none;
+  padding: 15px 30px;
+  background-color: #3c91e6;
+  border-radius: 50px;
+  color: #fff;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.login-page .login-container .intros-container .intro-control.signin-intro {
+  opacity: 1;
+  z-index: 2;
+}
+
+.login-page .login-container .intros-container .intro-control.signup-intro {
+  opacity: 0;
+  z-index: 1;
+}
+
+/* ---------------- FORM SWITCH ANIMATION ---------------- */
+.login-page.change .forms-container .form-control.signup-form {
+  opacity: 1;
+  z-index: 2;
+  transform: translateX(-100%);
+}
+
+.login-page.change .forms-container .form-control.signin-form {
+  opacity: 0;
+  z-index: 1;
+  transform: translateX(-100%);
+}
+
+.login-page.change .intros-container .intro-control {
+  transform: translateX(-100%);
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+@media screen and (max-width: 480px) {
+  .login-page .login-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-page .login-container .forms-container {
+    order: 2;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .login-page .login-container .forms-container .form-control {
+    position: absolute;
+    height: 50vh;
+  }
+
+  .login-page .login-container .forms-container .form-control.signup-form {
+    left: 0;
+    margin-top: 70px;
+  }
+
+  .login-page .login-container .intros-container {
+    order: 1;
+    width: 100%;
+    left: 0;
+    height: 40vh;
+  }
+
+  .login-page .login-container .intros-container .intro-control {
+    position: absolute;
+    height: 40vh;
+  }
+
+  .login-page.change .forms-container .form-control.signup-form {
+    transform: translateX(0%);
+  }
+
+  .login-page.change .forms-container .form-control.signin-form {
+    transform: translateX(0%);
+  }
+
+  .login-page.change .intros-container .intro-control {
+    transform: translateX(0%);
+  }
+}
