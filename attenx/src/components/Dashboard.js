@@ -26,7 +26,7 @@ const Dashboard = () => {
         }
 
         // Fetch from backend (triggers SRM login)
-        const res = await fetch("http://localhost:5000/launch");
+        const res = await fetch("https://optipress-oasis.onrender.com/launch");
         if (!res.ok) throw new Error("Failed to fetch attendance data");
 
         const data = await res.json();
@@ -60,7 +60,7 @@ const Dashboard = () => {
       setLoading(true);
       localStorage.removeItem("attendanceData");
 
-      const res = await fetch("http://localhost:5000/launch");
+      const res = await fetch("https://optipress-oasis.onrender.com/launch");
       if (!res.ok) throw new Error("Failed to fetch new data from SRM portal");
 
       const data = await res.json();
